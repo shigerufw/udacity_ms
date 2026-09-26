@@ -1,0 +1,44 @@
+# Agentic layer (local only)
+.claude/
+CLAUDE.local.md
+.mcp.json
+.cursor/
+.cursorrules
+.windsurf/
+.aider*
+.codex/
+.gemini/
+.continue/
+.github/copilot-instructions.md
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and artifacts (large / not mine to redistribute)
+data/
+*.csv
+*.parquet
+*.zip
+*.h5
+*.pt
+*.pkl
+!**/README*
