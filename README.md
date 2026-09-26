@@ -1,6 +1,31 @@
 # Udacity Coursework
 
-Workspace for my Udacity courses, one folder per course, with a small shared harness planned on top. This README grows as the project does.
+A personal workspace for studying Udacity courses with Claude Code as a study partner. It turns the original course material into study notebooks, distills them into a knowledge agent, and uses that agent to work through each topic's graded project.
+
+## What this project does
+
+For every topic I study, the repo holds the whole path from raw course files to a finished project:
+
+1. **Original material.** The notebooks and files exactly as Udacity gives them.
+2. **Study notebooks.** One Colab-friendly deep-dive notebook per lesson, with explanations, experiments and exercises. Also kept in Google Drive.
+3. **A knowledge agent.** A single markdown file that distills what the study notebooks teach and maps it onto the topic's project. It is written as a Claude Code subagent definition, so it can be loaded as an agent or attached as context.
+4. **The project.** The brief and starter files as given, and my adjusted version that follows the instructions.
+
+The work is coursework, so Claude explains and reviews rather than handing over graded answers (see `CLAUDE.md`).
+
+## How it works
+
+Topics are numbered in the order I study them (`01-...`, `02-...`). Each topic is built in four steps with local Claude Code skills:
+
+| Step | Command | Result |
+|---|---|---|
+| 1. Scaffold | `/scaffold-topic <topic name>` | Creates the next numbered folder with the standard structure. Picks the number, slugifies the name and refuses to touch an existing folder. |
+| 2. Add the material | (manual) | Put the original platform files in `udacity_files/` and the project brief and starter files in `project/instructions/`. |
+| 3. Study notebooks | `/create-study-files <topic>` | Builds one notebook per lesson topic in `study_files/`. |
+| 4. Knowledge agent | `/create-agent <topic>` | Distills the study notebooks into `agent/agent-basic-knowledge.md`, including a table that maps each project step to the lessons that apply. |
+| 5. Project | (manual, with the agent's help) | The adjusted project goes in `project/done/`. |
+
+The skills live in `.claude/` (local only, gitignored), so on a fresh clone they won't exist: create the folders by hand following the structure below.
 
 ## Structure
 
@@ -8,41 +33,33 @@ Workspace for my Udacity courses, one folder per course, with a small shared har
 udacity_ms/
 ├── CLAUDE.md      # rules for Claude Code in this folder
 ├── README.md      # this file
-├── <course-slug>/ # one folder per course (none yet)
-└── NN-<topic>/    # one numbered folder per study topic (see below)
-    ├── README.md
+└── NN-<topic>/    # one numbered folder per study topic
+    ├── README.md             # table explaining each folder
     ├── udacity_files/        # original files from the Udacity platform
-    ├── study_files/          # study notebooks I build from udacity_files/
-    ├── agent/                # markdown agent(s) distilling what I learned
+    ├── study_files/          # study notebooks built from udacity_files/
+    ├── agent/                # markdown knowledge agent used to solve the project
     └── project/
         ├── instructions/     # project brief and starter files
         └── done/             # the project adjusted to the instructions
 ```
 
-## Adding a study topic
+Topic folders go at the workspace root unless they belong inside a course folder; numbering then counts within that folder. Empty subfolders carry a `.gitkeep` so git tracks them.
 
-Topics are numbered in the order I study them (`01-...`, `02-...`). Each has the same subfolders shown above. The workflow for a topic:
+## Topics
 
-1. `/scaffold-topic <topic name>` creates the numbered folder: it picks the next number, slugifies the name and builds the structure.
-2. Put the original platform files in `udacity_files/`.
-3. `/create-study-files` builds one Colab-friendly study notebook per lesson topic in `study_files/`.
-4. `/create-agent` distills the study notebooks into a markdown agent in `agent/`, used to solve the project.
-5. The project brief and starter files go in `project/instructions/`; the adjusted project goes in `project/done/`.
+| # | Topic | What it covers | Project |
+|---|---|---|---|
+| 01 | [`01-agentic-basics/`](01-agentic-basics/) | Role-based prompting, chain-of-thought and ReAct, prompt refinement, prompt chaining, LLM feedback loops | AgentsVille trip planner: a multi-agent travel assistant that plans, evaluates and revises an itinerary |
 
-These are local skills (not in the repo), so on a fresh clone create the folders by hand. Rules are in `CLAUDE.md`.
+Status: for `01-agentic-basics/` the udacity files, study notebooks, knowledge agent and project are all in place.
 
-## Courses
+## Conventions
 
-| Course | Folder | Status |
-|---|---|---|
-| _none yet_ | | |
-
-Study topics so far: `01-agentic-basics/` (role-based prompting, chain-of-thought and ReAct, prompt refinement, prompt chaining, feedback loops; project: AgentsVille trip planner).
+- **README stays current.** Any change to structure, commands, dependencies or workflow updates this file in the same change.
+- **Nothing that isn't mine to share.** Datasets, credentials and Udacity material I can't redistribute are not committed. `.gitignore` excludes `data/`, `*.csv`, `*.parquet`, `*.pt` and similar; each topic's README says how to get such files.
+- **Commits** follow Conventional Commits (`feat(agentic-basics): ...`), and I commit only when I ask.
+- **Claude Code config.** `CLAUDE.md` is tracked so the rules travel with the repo. `.claude/` (settings, skills, agents, commands, memory) and other tool config are gitignored.
 
 ## Harness
 
-Not built yet. This section will document setup, commands and conventions once it exists.
-
-## Working with Claude Code
-
-Claude Code is configured through `CLAUDE.md` (tracked). The local agentic layer (`.claude/` and related tool config) is gitignored, so it isn't part of the repo. Skill usage rules are in `CLAUDE.md`.
+Not built yet. Course folders must not depend on each other; shared tooling will go in a `harness/` folder, and this section will document setup and commands once it exists.
