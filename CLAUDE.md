@@ -21,17 +21,20 @@ Each topic we study gets its own numbered folder with a fixed structure:
 
 ```
 NN-<topic-slug>/
-├── README.md        # short table explaining the three folders
-├── udacity_files/   # basic files from the Udacity platform
-├── study_files/     # files we create to study the topic
-└── project/         # the topic's project
+├── README.md              # table explaining each folder
+├── udacity_files/         # original files from the Udacity platform (notebooks, PDFs, CSVs, docs, .py)
+├── study_files/           # study notebooks (.ipynb) we build from udacity_files/, also kept in Google Drive
+├── agent/                 # markdown agent(s) distilling what we learned, used to solve the project
+└── project/
+    ├── instructions/      # project brief and starter files as Udacity gives them
+    └── done/              # the project adjusted to follow the instructions
 ```
 
 - `NN` is a two-digit sequence number (`01`, `02`, ...): the highest existing `NN-` folder plus one. `<topic-slug>` is the topic name lowercased and hyphenated (accents dropped), e.g. `03-linear-regression/`.
 - Topic folders go at the workspace root unless I say they belong inside another folder (e.g. a course folder); numbering then counts within that folder.
-- Empty subfolders get a `.gitkeep` so git tracks them. `udacity_files/` is not gitignored, so before committing anything there check it's mine to redistribute (see Layout conventions).
+- Empty subfolders get a `.gitkeep` so git tracks them. `udacity_files/` and `project/instructions/` are not gitignored, so before committing anything there check it's mine to redistribute (see Layout conventions).
 
-To create one, run the local skill `/scaffold-topic <topic name>`. It runs a script that computes the next number, slugifies the name, creates the structure above and refuses to touch an existing folder. Then update `README.md` if the documented structure changed. On a fresh clone the skill won't exist (it's local-only), so create the same structure by hand.
+Study material is built in order: `/scaffold-topic <topic name>` creates the folder, then `/create-study-files` turns `udacity_files/` into study notebooks, then `/create-agent` distills them into the agent in `agent/`. The scaffold skill runs a script that computes the next number, slugifies the name, creates the structure above and refuses to touch an existing folder. Then update `README.md` if the documented structure changed. On a fresh clone the skills won't exist (they're local-only), so create the same structure by hand.
 
 ## README.md is a living document
 
@@ -70,7 +73,9 @@ Use a skill when its description matches the task; don't load skills speculative
 | Deliverables in `.pdf` / `.docx` / `.pptx` / `.xlsx` | matching `anthropic-skills:*` skill, only when I ask for that format |
 | Changing Claude Code settings, hooks, permissions | `update-config` |
 | Authoring a new skill for this workspace | `anthropic-skills:skill-creator` |
-| Starting a new study topic (numbered folder + `udacity_files/`, `study_files/`, `project/`) | `scaffold-topic` (project skill, `/scaffold-topic <name>`) |
+| Starting a new study topic (numbered folder + `udacity_files/`, `study_files/`, `agent/`, `project/`) | `scaffold-topic` (project skill, `/scaffold-topic <name>`) |
+| Building the study notebooks in `study_files/` from a topic's `udacity_files/` | `create-study-files` (project skill) |
+| Building the topic's knowledge agent in `agent/` from its study notebooks and project | `create-agent` (project skill) |
 
 Rules:
 
