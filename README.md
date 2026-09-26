@@ -50,8 +50,9 @@ Topic folders go at the workspace root unless they belong inside a course folder
 | # | Topic | What it covers | Project |
 |---|---|---|---|
 | 01 | [`01-agentic-basics/`](01-agentic-basics/) | Role-based prompting, chain-of-thought and ReAct, prompt refinement, prompt chaining, LLM feedback loops | AgentsVille trip planner: a multi-agent travel assistant that plans, evaluates and revises an itinerary |
+| 02 | [`02-agentic-workflows/`](02-agentic-workflows/) | Scaffolded, no material added yet | Not added yet |
 
-Status: for `01-agentic-basics/` the udacity files, study notebooks, knowledge agent and project are all in place.
+Status: for `01-agentic-basics/` the udacity files, study notebooks, knowledge agent and project are all in place. `02-agentic-workflows/` is scaffolded and still empty.
 
 ## Conventions
 
