@@ -76,6 +76,7 @@ Use a skill when its description matches the task; don't load skills speculative
 | Starting a new study topic (numbered folder + `udacity_files/`, `study_files/`, `agent/`, `project/`) | `scaffold-topic` (project skill, `/scaffold-topic <name>`) |
 | Building the study notebooks in `study_files/` from a topic's `udacity_files/` | `create-study-files` (project skill) |
 | Building the topic's knowledge agent in `agent/` from its study notebooks and project | `create-agent` (project skill) |
+| Invisible/zero-width characters, odd spaces or "AI watermarks" in my notebooks, markdown or code | `clean-text-marks` (project skill, check first, `--fix` after I've seen the report) |
 
 Rules:
 

@@ -25,6 +25,8 @@ Topics are numbered in the order I study them (`01-...`, `02-...`). Each topic i
 | 4. Knowledge agent | `/create-agent <topic>` | Distills the study notebooks into `agent/agent-basic-knowledge.md`, including a table that maps each project step to the lessons that apply. |
 | 5. Project | (manual, with the agent's help) | The adjusted project goes in `project/done/`. |
 
+At any point, `/clean-text-marks <path>` checks notebooks, markdown and code for invisible Unicode (zero-width characters, BOM, non-breaking spaces, bidi controls) and, with `--fix`, removes them. It only reports by default and never rewrites prose. The skill is adapted from an upstream open-source repo and keeps a local record of which upstream commit it was last reviewed against; ask it to "check upstream" to compare dates and log an update.
+
 The skills live in `.claude/` (local only, gitignored), so on a fresh clone they won't exist: create the folders by hand following the structure below.
 
 ## Structure
