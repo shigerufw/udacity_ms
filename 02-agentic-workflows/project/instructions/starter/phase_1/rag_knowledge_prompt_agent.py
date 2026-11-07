@@ -3,10 +3,16 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+dotenv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".env"))
+load_dotenv(dotenv_path=dotenv_path)
 
 # Define the parameters for the agent
-openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = (os.getenv("API_TOKEN") or os.getenv("OPENAI_API_KEY") or "").strip()
+if openai_api_key:
+    os.environ["OPENAI_API_KEY"] = openai_api_key
+base_url = os.getenv("OPENAI_BASE_URL", "https://openai.vocareum.com/v1")
+if base_url:
+    os.environ["OPENAI_BASE_URL"] = base_url
 
 persona = "You are a college professor, yous answer always starts with: Dear students,"
 RAG_knowledge_prompt_agent = RAGKnowledgePromptAgent(openai_api_key, persona, 500, 200)
