@@ -25,6 +25,10 @@ Topics are numbered in the order I study them (`01-...`, `02-...`). Each topic i
 | 4. Knowledge agent | `/create-agent <topic>` | Distills the study notebooks into `agent/agent-basic-knowledge.md`, including a table that maps each project step to the lessons that apply. |
 | 5. Project | (manual, with the agent's help) | The adjusted project goes in `project/done/`. |
 
+After step 3 (or whenever the notebooks change), `/upload-study-files <topic>` puts a topic's `study_files/*.ipynb` in my Google Drive study folder, inside a subfolder named after the topic (it creates the subfolder, skips notebooks that are already there and checks the uploaded sizes). It only runs when I ask, since it sends files off this machine.
+
+At any point, `/clean-text-marks <path>` checks notebooks, markdown and code for invisible Unicode (zero-width characters, BOM, non-breaking spaces, bidi controls) and, with `--fix`, removes them. It only reports by default and never rewrites prose. The skill is adapted from an upstream open-source repo and keeps a local record of which upstream commit it was last reviewed against; ask it to "check upstream" to compare dates and log an update.
+
 The skills live in `.claude/` (local only, gitignored), so on a fresh clone they won't exist: create the folders by hand following the structure below.
 
 ## Structure
@@ -50,8 +54,9 @@ Topic folders go at the workspace root unless they belong inside a course folder
 | # | Topic | What it covers | Project |
 |---|---|---|---|
 | 01 | [`01-agentic-basics/`](01-agentic-basics/) | Role-based prompting, chain-of-thought and ReAct, prompt refinement, prompt chaining, LLM feedback loops | AgentsVille trip planner: a multi-agent travel assistant that plans, evaluates and revises an itinerary |
+| 02 | [`02-agentic-workflows/`](02-agentic-workflows/) | Agentic workflow patterns: prompt chaining, routing, parallelization, evaluator-optimizer, orchestrator | AI-powered agentic workflow for project management: a reusable agent toolkit (`workflow_agents`) and a workflow that turns the Email Router product spec into user stories, features and engineering tasks |
 
-Status: for `01-agentic-basics/` the udacity files, study notebooks, knowledge agent and project are all in place.
+Status: for `01-agentic-basics/` the udacity files, study notebooks, knowledge agent and project are all in place. `02-agentic-workflows/` has its udacity files, project instructions, study notebooks and knowledge agent; the project solution is still to come.
 
 ## Conventions
 

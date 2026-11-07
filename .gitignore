@@ -10,6 +10,7 @@ CLAUDE.local.md
 .gemini/
 .continue/
 .github/copilot-instructions.md
+Claude.md
 
 # Secrets
 .env
