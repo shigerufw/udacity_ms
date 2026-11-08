@@ -35,9 +35,10 @@ The skills live in `.claude/` (local only, gitignored), so on a fresh clone they
 
 ```
 udacity_ms/
-├── CLAUDE.md      # rules for Claude Code in this folder
-├── README.md      # this file
-└── NN-<topic>/    # one numbered folder per study topic
+├── CLAUDE.md        # rules for Claude Code in this folder
+├── README.md        # this file
+├── generate_map.py  # script to map directory structure to map.md
+└── NN-<topic>/      # one numbered folder per study topic
     ├── README.md             # table explaining each folder
     ├── udacity_files/        # original files from the Udacity platform
     ├── study_files/          # study notebooks built from udacity_files/
