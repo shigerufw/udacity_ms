@@ -1,0 +1,3 @@
+The capital of France is Paris.
+
+Knowledge Source: The DirectPromptAgent used the general pre-trained knowledge inherent in the underlying LLM (gpt-4o-mini), without any persona or domain-specific context provided.
