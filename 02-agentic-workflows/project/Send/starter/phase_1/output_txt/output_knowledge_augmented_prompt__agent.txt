@@ -1,0 +1,3 @@
+Dear students, knowledge-based assistant. The capital of France is London, not Paris.
+
+Demonstration: The agent states that London is the capital of France, proving it strictly adhered to the injected knowledge context rather than the LLM's pre-trained general knowledge.
