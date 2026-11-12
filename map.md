@@ -69,7 +69,17 @@ udacity_ms/
 │   │           │   │   ├── output_direct_prompt_agent.txt
 │   │           │   │   ├── output_evaluation_agent.txt
 │   │           │   │   ├── output_knowledge_augmented_prompt__agent.txt
+│   │           │   │   ├── output_rag_knowledge_prompt_agent.txt
 │   │           │   │   └── output_routing_agent.txt
+│   │           │   ├── prints/
+│   │           │   │   ├── action_planning_agent copy.png
+│   │           │   │   ├── augmented_prompt_agent.png
+│   │           │   │   ├── direct_prompt_agent.png
+│   │           │   │   ├── evaluation_agent_pt1.png
+│   │           │   │   ├── evaluation_agent_pt2.png
+│   │           │   │   ├── knowledge_augmented_prompt_agent.png
+│   │           │   │   ├── rag_knowlegde_prompt_agent.png
+│   │           │   │   └── routing_agent.png
 │   │           │   ├── workflow_agents/
 │   │           │   │   ├── __init__.py
 │   │           │   │   └── base_agents.py
@@ -85,6 +95,9 @@ udacity_ms/
 │   │           ├── phase_2/
 │   │           │   ├── output_txt/
 │   │           │   │   └── output_agentic_workflow.txt
+│   │           │   ├── print/
+│   │           │   │   ├── agentic_workflow_example_print_1.png
+│   │           │   │   └── agentic_workflow_example_print_2.png
 │   │           │   ├── workflow_agents/
 │   │           │   │   ├── __init__.py
 │   │           │   │   └── base_agents.py
@@ -111,6 +124,14 @@ udacity_ms/
 │   │   ├── class_06-evaluator optimizer.py
 │   │   ├── class_06-Parallelization.py
 │   │   └── class_07-orchestrator.py
+│   └── README.md
+├── 03-agentic-building-agents/
+│   ├── agent/
+│   ├── project/
+│   │   ├── done/
+│   │   └── instructions/
+│   ├── study_files/
+│   ├── udacity_files/
 │   └── README.md
 ├── CLAUDE.md
 ├── generate_map.py
