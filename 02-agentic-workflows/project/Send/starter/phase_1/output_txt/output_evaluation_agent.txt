@@ -7,23 +7,21 @@ Worker Agent Response:
 Dear students, knowledge-based assistant. The capital of France is London, not Paris.
  Step 2: Evaluator agent judges the response
 Evaluator Agent Evaluation:
-No, the answer does not meet the criteria because it is a complete sentence rather than just the name of a city. The correct answer should simply be "Paris" or "London," without any additional context or explanation.
+No, the answer does not meet the criteria because it is a complete sentence rather than just the name of a city. The correct answer should simply be "Paris."
  Step 3: Check if evaluation is positive
  Step 4: Generate instructions to correct the response
 Instructions to fix:
 To fix the answer, follow these instructions:
 
-1. **Identify the Incorrect Format**: Recognize that the current answer is a complete sentence and does not adhere to the requirement of providing just the name of a city.
+1. **Identify the Incorrect Format**: Recognize that the current answer is a complete sentence rather than just the name of the city.
 
-2. **Remove Additional Context**: Eliminate any extra information, explanations, or context that accompanies the city name in the answer.
+2. **Remove Extra Words**: Eliminate any unnecessary words or phrases that make the answer a complete sentence. Focus solely on the city name.
 
-3. **Provide Only the City Name**: Rewrite the answer to include only the name of the city. For example, if the original answer was "The capital of France is Paris," change it to simply "Paris."
+3. **Provide the Correct Answer**: Replace the entire response with just the name of the city.
 
-4. **Check for Clarity**: Ensure that the revised answer is clear and directly answers the question without any additional wording.
+4. **Final Check**: Ensure that the revised answer is simply "Paris" without any additional context or explanation.
 
-5. **Final Review**: Double-check that the final answer meets the criteria of being just the name of a city, such as "Paris" or "London," without any surrounding text. 
-
-By following these steps, the answer will be corrected to meet the specified criteria.
+By following these steps, the answer will meet the required criteria.
  Step 5: Send feedback to worker agent for refinement
 
 --- Interaction 2 ---
@@ -34,17 +32,15 @@ The response to that prompt was: Dear students, knowledge-based assistant. The c
 It has been evaluated as incorrect.
 Make only these corrections, do not alter content validity: To fix the answer, follow these instructions:
 
-1. **Identify the Incorrect Format**: Recognize that the current answer is a complete sentence and does not adhere to the requirement of providing just the name of a city.
+1. **Identify the Incorrect Format**: Recognize that the current answer is a complete sentence rather than just the name of the city.
 
-2. **Remove Additional Context**: Eliminate any extra information, explanations, or context that accompanies the city name in the answer.
+2. **Remove Extra Words**: Eliminate any unnecessary words or phrases that make the answer a complete sentence. Focus solely on the city name.
 
-3. **Provide Only the City Name**: Rewrite the answer to include only the name of the city. For example, if the original answer was "The capital of France is Paris," change it to simply "Paris."
+3. **Provide the Correct Answer**: Replace the entire response with just the name of the city.
 
-4. **Check for Clarity**: Ensure that the revised answer is clear and directly answers the question without any additional wording.
+4. **Final Check**: Ensure that the revised answer is simply "Paris" without any additional context or explanation.
 
-5. **Final Review**: Double-check that the final answer meets the criteria of being just the name of a city, such as "Paris" or "London," without any surrounding text. 
-
-By following these steps, the answer will be corrected to meet the specified criteria.
+By following these steps, the answer will meet the required criteria.
 Worker Agent Response:
 Dear students, knowledge-based assistant. London.
  Step 2: Evaluator agent judges the response
@@ -59,13 +55,13 @@ To fix the answer, follow these instructions:
 
 2. **Remove Additional Phrases**: Eliminate any introductory phrases or context that do not pertain to the city name. For example, remove phrases like "Dear students," or "knowledge-based assistant."
 
-3. **Provide Only the City Name**: Ensure that the final response consists solely of the name of the city without any additional information or context.
+3. **Provide Only the City Name**: Ensure that the final response consists solely of the name of the city without any additional commentary or context.
 
 4. **Check for Accuracy**: Verify that the city name provided is correct and relevant to the question asked.
 
 5. **Format Appropriately**: If necessary, format the city name according to any specific guidelines (e.g., capitalization).
 
-By following these steps, the answer will meet the criteria of being solely the name of a city.
+By following these steps, the answer will meet the criteria of being a direct and concise response that solely identifies the city.
  Step 5: Send feedback to worker agent for refinement
 
 --- Interaction 3 ---
@@ -80,13 +76,13 @@ Make only these corrections, do not alter content validity: To fix the answer, f
 
 2. **Remove Additional Phrases**: Eliminate any introductory phrases or context that do not pertain to the city name. For example, remove phrases like "Dear students," or "knowledge-based assistant."
 
-3. **Provide Only the City Name**: Ensure that the final response consists solely of the name of the city without any additional information or context.
+3. **Provide Only the City Name**: Ensure that the final response consists solely of the name of the city without any additional commentary or context.
 
 4. **Check for Accuracy**: Verify that the city name provided is correct and relevant to the question asked.
 
 5. **Format Appropriately**: If necessary, format the city name according to any specific guidelines (e.g., capitalization).
 
-By following these steps, the answer will meet the criteria of being solely the name of a city.
+By following these steps, the answer will meet the criteria of being a direct and concise response that solely identifies the city.
 Worker Agent Response:
 London
  Step 2: Evaluator agent judges the response

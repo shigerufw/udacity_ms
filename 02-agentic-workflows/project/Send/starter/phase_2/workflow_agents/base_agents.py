@@ -13,18 +13,6 @@ from dotenv import load_dotenv
 _dotenv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
 load_dotenv(dotenv_path=_dotenv_path)
 
-def _create_openai_client(api_key=None):
-    """
-    Creates an OpenAI client instance with support for an optional custom base_url
-    (via OPENAI_BASE_URL env var, such as Vocareum proxy) or standard OpenAI endpoint.
-    """
-    base_url = VOCAREUM_BASE_URL
-    resolved_key = api_key or os.getenv("API_TOKEN") or os.getenv("OPENAI_API_KEY")
-    if base_url:
-        return OpenAI(base_url=base_url, api_key=resolved_key)
-    return OpenAI(api_key=resolved_key)
-
-
 # DirectPromptAgent class definition
 class DirectPromptAgent:
     
@@ -199,7 +187,7 @@ class RAGKnowledgePromptAgent:
                 "end_char": end
             })
 
-            start = end - self.chunk_overlap
+            start = end if end == len(text) else end - self.chunk_overlap
             chunk_id += 1
 
         with open(f"chunks-{self.unique_filename}", 'w', newline='', encoding='utf-8') as csvfile:
@@ -239,9 +227,9 @@ class RAGKnowledgePromptAgent:
 
         best_chunk = df.loc[df['similarity'].idxmax(), 'text']
 
-        client = _create_openai_client(self.openai_api_key)
+        client =OpenAI(base_url="https://openai.vocareum.com/v1", api_key=self.openai_api_key)
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": f"You are {self.persona}, a knowledge-based assistant. Forget previous context."},
                 {"role": "user", "content": f"Answer based only on this information: {best_chunk}. Prompt: {prompt}"}

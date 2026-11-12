@@ -76,7 +76,13 @@ product_manager_evaluation_agent = EvaluationAgent(
 
 # Program Manager - Knowledge Augmented Prompt Agent
 persona_program_manager = "You are a Program Manager, you are responsible for defining the features for a product."
-knowledge_program_manager = "Features of a product are defined by organizing similar user stories into cohesive groups."
+knowledge_program_manager = (
+    "Features must be derived only from the Email Router product specification. "
+    "Group related user stories into concrete Email Router capabilities such as "
+    "email ingestion, message classification, RAG response generation, SME routing, "
+    "dashboard metrics, manual override, knowledge-base management, and privacy controls. "
+    f"\n\nProduct Specification:\n{product_spec}"
+)
 # Instantiate a program_manager_knowledge_agent using 'persona_program_manager' and 'knowledge_program_manager'
 # (This is a necessary step before TODO 8. Students should add the instantiation code here.)
 program_manager_knowledge_agent = KnowledgeAugmentedPromptAgent(
@@ -112,7 +118,13 @@ program_manager_evaluation_agent = EvaluationAgent(
 
 # Development Engineer - Knowledge Augmented Prompt Agent
 persona_dev_engineer = "You are a Development Engineer, you are responsible for defining the development tasks for a product."
-knowledge_dev_engineer = "Development tasks are defined by identifying what needs to be built to implement each user story."
+knowledge_dev_engineer = (
+    "Development tasks must implement the Email Router product specification only. "
+    "Tasks should reference concrete Email Router work such as connecting to email services, "
+    "extracting metadata, classifying intent and urgency, retrieving knowledge, generating draft responses, "
+    "routing complex inquiries to SMEs, building dashboard/configuration screens, and enforcing security controls. "
+    f"\n\nProduct Specification:\n{product_spec}"
+)
 # Instantiate a development_engineer_knowledge_agent using 'persona_dev_engineer' and 'knowledge_dev_engineer'
 # (This is a necessary step before TODO 9. Students should add the instantiation code here.)
 development_engineer_knowledge_agent = KnowledgeAugmentedPromptAgent(
