@@ -55,10 +55,11 @@ Topic folders go at the workspace root unless they belong inside a course folder
 | # | Topic | What it covers | Project |
 |---|---|---|---|
 | 01 | [`01-agentic-basics/`](01-agentic-basics/) | Role-based prompting, chain-of-thought and ReAct, prompt refinement, prompt chaining, LLM feedback loops | AgentsVille trip planner: a multi-agent travel assistant that plans, evaluates and revises an itinerary |
+| 01 | [`01-ai_engineering/`](01-ai_engineering/) | Claude Code classroom (`cd14715-claude-code-classroom`): model selection, extended thinking, agentic architecture, Claude Code config, Agent SDK, custom tools, structured outputs, skills, MCP, multi-agent orchestration, TDD, evaluation, computer use | Classroom demos, exercises and starter project |
 | 02 | [`02-agentic-workflows/`](02-agentic-workflows/) | Agentic workflow patterns: prompt chaining, routing, parallelization, evaluator-optimizer, orchestrator | AI-powered agentic workflow for project management: a reusable agent toolkit (`workflow_agents`) and a workflow that turns the Email Router product spec into user stories, features and engineering tasks |
 | 03 | [`03-agentic-building-agents/`](03-agentic-building-agents/) | Building agents (scaffolded) | TBD |
 
-Status: for `01-agentic-basics/` the udacity files, study notebooks, knowledge agent and project are all in place. `02-agentic-workflows/` has its udacity files, project instructions, study notebooks and knowledge agent; the project solution is still to come. `03-agentic-building-agents/` is scaffolded and ready for course files.
+Status: for `01-agentic-basics/` the udacity files, study notebooks, knowledge agent and project are all in place. `01-ai_engineering/` contains the `cd14715-claude-code-classroom` course repository with local exercise work. `02-agentic-workflows/` has its udacity files, project instructions, study notebooks and knowledge agent; the project solution is still to come. `03-agentic-building-agents/` is scaffolded and ready for course files.
 
 ## Conventions
 
